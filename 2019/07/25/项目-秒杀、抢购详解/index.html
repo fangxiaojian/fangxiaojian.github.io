@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans# 主题语言">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="项目,秒杀," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小贱の博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前言​        所谓“秒杀”，就是网络卖家发布一些超低价格的商品，所有买家在同一时间网上抢购的一种销售方式。通俗一点讲就是网络商家为促销等目的组织的网上限时抢购活动。由于商品价格低廉，往往一上架就被抢购一空，有时只用一秒钟。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="秒杀、抢购项目详解">
+<meta property="og:url" content="https://www.xiaojianblog.top/2019/07/25/%E9%A1%B9%E7%9B%AE-%E7%A7%92%E6%9D%80%E3%80%81%E6%8A%A2%E8%B4%AD%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="小贱の博客">
+<meta property="og:description" content="前言​        所谓“秒杀”，就是网络卖家发布一些超低价格的商品，所有买家在同一时间网上抢购的一种销售方式。通俗一点讲就是网络商家为促销等目的组织的网上限时抢购活动。由于商品价格低廉，往往一上架就被抢购一空，有时只用一秒钟。">
+<meta property="og:locale">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaoshashejiyaodian.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaosha.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/goodsSQL.JPG">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/orderSQL.JPG">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaoshalittle.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/order.png">
+<meta property="article:published_time" content="2019-07-25T02:31:52.000Z">
+<meta property="article:modified_time" content="2019-08-08T14:22:16.000Z">
+<meta property="article:author" content="小贱">
+<meta property="article:tag" content="项目">
+<meta property="article:tag" content="秒杀">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaoshashejiyaodian.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.xiaojianblog.top/2019/07/25/项目-秒杀、抢购详解/"/>
+
+
+
+
+
+  <title>秒杀、抢购项目详解 | 小贱の博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <script>
+class Circle {
+    //创建对象
+    //以一个圆为对象
+    //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
+    //this.r是创建圆的半径，参数越大半径越大
+    //this._mx,this._my是移动的距离，参数越大移动
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.r = Math.random() * 10 ;
+        this._mx = Math.random() ;
+        this._my = Math.random() ;
+
+    }
+
+    //canvas 画圆和画直线
+    //画圆就是正常的用canvas画一个圆
+    //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+    drawCircle(ctx) {
+        ctx.beginPath();
+        //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+        ctx.arc(this.x, this.y, this.r, 0, 360)
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+        ctx.fill();
+    }
+
+    drawLine(ctx, _circle) {
+        let dx = this.x - _circle.x;
+        let dy = this.y - _circle.y;
+        let d = Math.sqrt(dx * dx + dy * dy)
+        if (d < 150) {
+            ctx.beginPath();
+            //开始一条路径，移动到位置 this.x,this.y。创建到达位置 _circle.x,_circle.y 的一条线：
+            ctx.moveTo(this.x, this.y);   //起始点
+            ctx.lineTo(_circle.x, _circle.y);   //终点
+            ctx.closePath();
+            ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+            ctx.stroke();
+        }
+    }
+
+    // 圆圈移动
+    // 圆圈移动的距离必须在屏幕范围内
+    move(w, h) {
+        this._mx = (this.x < w && this.x > 0) ? this._mx : (-this._mx);
+        this._my = (this.y < h && this.y > 0) ? this._my : (-this._my);
+        this.x += this._mx / 2;
+        this.y += this._my / 2;
+    }
+}
+//鼠标点画圆闪烁变动
+class currentCirle extends Circle {
+    constructor(x, y) {
+        super(x, y)
+    }
+
+    drawCircle(ctx) {
+        ctx.beginPath();
+        //注释内容为鼠标焦点的地方圆圈半径变化
+        //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+        this.r = 8;
+        ctx.arc(this.x, this.y, this.r, 0, 360);
+        ctx.closePath();
+        //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+        ctx.fillStyle = 'rgba(255, 77, 54, 0.3)'
+        ctx.fill();
+
+    }
+}
+//更新页面用requestAnimationFrame替代setTimeout
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+let w = canvas.width = canvas.offsetWidth;
+let h = canvas.height = canvas.offsetHeight;
+let circles = [];
+let current_circle = new currentCirle(0, 0)
+
+let draw = function () {
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < circles.length; i++) {
+        circles[i].move(w, h);
+        circles[i].drawCircle(ctx);
+        for (j = i + 1; j < circles.length; j++) {
+            circles[i].drawLine(ctx, circles[j])
+        }
+    }
+    if (current_circle.x) {
+        current_circle.drawCircle(ctx);
+        for (var k = 1; k < circles.length; k++) {
+            current_circle.drawLine(ctx, circles[k])
+        }
+    }
+    requestAnimationFrame(draw)
+}
+
+let init = function (num) {
+    for (var i = 0; i < num; i++) {
+        circles.push(new Circle(Math.random() * w, Math.random() * h));
+    }
+    draw();
+}
+window.addEventListener('load', init(60));
+window.onmousemove = function (e) {
+    e = e || window.event;
+    current_circle.x = e.clientX;
+    current_circle.y = e.clientY;
+}
+window.onmouseout = function () {
+    current_circle.x = null;
+    current_circle.y = null;
+
+};
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans# 主题语言">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a target="_blank" rel="noopener" href="https://github.com/fangxiaojian"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/uploads/forkme.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" E:\09xiaojianblog\themes\nextitemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小贱の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Our pride chiefly rests on ignorance</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/book/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书单
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.xiaojianblog.top/2019/07/25/%E9%A1%B9%E7%9B%AE-%E7%A7%92%E6%9D%80%E3%80%81%E6%8A%A2%E8%B4%AD%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小贱の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">秒杀、抢购项目详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-25T10:31:52+08:00">
+                2019-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/07/25/%E9%A1%B9%E7%9B%AE-%E7%A7%92%E6%9D%80%E3%80%81%E6%8A%A2%E8%B4%AD%E8%AF%A6%E8%A7%A3/" class="leancloud_visitors" data-flag-title="秒杀、抢购项目详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        所谓“秒杀”，就是网络卖家发布一些超低价格的商品，所有买家在同一时间网上抢购的一种销售方式。通俗一点讲就是网络商家为促销等目的组织的网上限时抢购活动。由于商品价格低廉，往往一上架就被抢购一空，有时只用一秒钟。 </p>
+<a id="more"></a>
+
+<h2 id="项目设计要点"><a href="#项目设计要点" class="headerlink" title="项目设计要点"></a>项目设计要点</h2><p><img src="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaoshashejiyaodian.png"></p>
+<h2 id="项目流程"><a href="#项目流程" class="headerlink" title="项目流程"></a>项目流程</h2><p>总的流程图</p>
+<p><img src="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaosha.png"></p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>goods</p>
+<p><img src="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/goodsSQL.JPG"></p>
+<p>order</p>
+<p><img src="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/orderSQL.JPG"></p>
+<h2 id="项目流程详解"><a href="#项目流程详解" class="headerlink" title="项目流程详解"></a>项目流程详解</h2><h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><p>通过 <code>Spring</code> 的 <code>@Scheduled</code> 注解实现定时任务</p>
+<h4 id="GoodsRedisStoreInitTask-商品redis库存初始化任务"><a href="#GoodsRedisStoreInitTask-商品redis库存初始化任务" class="headerlink" title="GoodsRedisStoreInitTask 商品redis库存初始化任务"></a>GoodsRedisStoreInitTask 商品redis库存初始化任务</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  *  每隔1分钟触发一次</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="meta">@Scheduled(cron = &quot;0 0/1 * * * ? &quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doInit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   List&lt;Goods&gt; goods = goodsMapper.selectAll();</span><br><span class="line">   <span class="keyword">for</span> (Goods item : goods) &#123;</span><br><span class="line">      goodsRedisStore.doInit(item);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// goodsRedisStore.doInit(item)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doInit</span><span class="params">(Goods goods)</span> </span>&#123;</span><br><span class="line">		   String key = getKey(goods.getRandomName());</span><br><span class="line">		   <span class="comment">// 如果没有初始化库存则初始化</span></span><br><span class="line">		   <span class="keyword">if</span> (!redisUtil.exists(key)) 		&#123;</span><br><span class="line">			      redisUtil.set(key, goods.getStore() * <span class="number">1</span>);</span><br><span class="line">     		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以 <code>REDIS_GOODS_STORE_GOODS_RANDOM_NAME:+商品唯一标识符</code> 为 key；商品库存 <code>store</code> 为 value。</p>
+<h4 id="GoodsTokenExpireClearTask-商品token过期清理任务"><a href="#GoodsTokenExpireClearTask-商品token过期清理任务" class="headerlink" title="GoodsTokenExpireClearTask 商品token过期清理任务"></a>GoodsTokenExpireClearTask 商品token过期清理任务</h4><p>每当用户抢购成功都会生成 token ，而用户没有在规定的时间内下单支付就会过期，如果token存在，且是过期的，则 redis 库存 +1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 每隔1分钟触发一次</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Scheduled(cron = &quot;0 0/1 * * * ? &quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doClear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   Set&lt;String&gt; keys = miaoshaSuccessTokenCache.getAllToken();</span><br><span class="line">   <span class="keyword">for</span>(String key : keys)&#123;</span><br><span class="line">      <span class="comment">//验证token是否过期，过期了自动释放redis库存</span></span><br><span class="line">      miaoshaSuccessTokenCache.validateTokenByKey(key);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以 <code>MIAOSHA_SUCCESS_TOKEN_MOBILE:+手机号+_GOODS_RANDOM_NAME:+商品唯一标识符+_token</code> 为 key；<code>抢购成功时间</code> 为 value。</p>
+<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><p>获取商品列表和商品详情页就不介绍了，我们来说说商品抢购按钮URL的地址拼接</p>
+<p>在前端页面中，会先判断用户是否登录，没有登录则会弹出登录窗口，然后获取系统当前时间，最后与商品的开始时间与结束时间进行比较，判断当前商品的状态：<code>1秒杀结束、2倒计时、3开始秒杀</code></p>
+<p>当秒杀开始时，通过ajax获取商品唯一标识 <code>randomName</code> 并显示秒杀按钮，点击秒杀按钮 会将 <code>randomName 和 手机号</code> 发送到后端，请求成功后开启定时查询抢购结果的方法。至此，秒杀的核心功能开始了</p>
+<p>注：代码太多就不贴了，具体代码在  <code>webapp\resource\script\seckill.js</code> 中</p>
+<h3 id="秒杀"><a href="#秒杀" class="headerlink" title="秒杀"></a>秒杀</h3><h4 id="恶意用户及IP拦截"><a href="#恶意用户及IP拦截" class="headerlink" title="恶意用户及IP拦截"></a>恶意用户及IP拦截</h4><h5 id="UserInterceptor-恶意用户拦截"><a href="#UserInterceptor-恶意用户拦截" class="headerlink" title="UserInterceptor 恶意用户拦截"></a>UserInterceptor 恶意用户拦截</h5><p>具体功能是：</p>
+<ol>
+<li>判断用户手机号是否在Redis用户黑名单缓存中，</li>
+<li>判断用户请求+1后是否达到黑名单要求，即1秒内访问次数超过10次</li>
+<li>都不符合则增加缓存，以 key：user_request_time_prefix + 手机号 ；value 为 访问时间  的list 类型。</li>
+</ol>
+<h5 id="IPInterceptor-恶意IP拦截"><a href="#IPInterceptor-恶意IP拦截" class="headerlink" title="IPInterceptor 恶意IP拦截"></a>IPInterceptor 恶意IP拦截</h5><p>具体功能是：</p>
+<ol>
+<li>获取用户的真实IP，并判断IP是否正常</li>
+<li>判断IP是否在Redis的IP黑名单中</li>
+<li>判断请求+1后是否达到黑名单要求，即1秒内访问次数超过10次</li>
+<li>都不符合则增加缓存，以 key：ip_request_time_prefix + IP号 ；value 为 访问时间  的list 类型。</li>
+</ol>
+<h4 id="MiaoshaInterface-miaosha"><a href="#MiaoshaInterface-miaosha" class="headerlink" title="MiaoshaInterface.miaosha()"></a>MiaoshaInterface.miaosha()</h4><h5 id="秒杀方法部分流程图详解"><a href="#秒杀方法部分流程图详解" class="headerlink" title="秒杀方法部分流程图详解"></a>秒杀方法部分流程图详解</h5><p><img src="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/miaoshalittle.png"></p>
+<p>这里面用到很多的Redis</p>
+<table>
+<thead>
+<tr>
+<th>Redis</th>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>秒杀商品是否结束</td>
+<td>MIAOSHA_FINISH…+randomName</td>
+<td>null或者非null，null则未结束</td>
+</tr>
+<tr>
+<td>消息对列</td>
+<td>MIAOSHA_MESSAGE</td>
+<td>Message</td>
+</tr>
+<tr>
+<td>处理列表</td>
+<td>MIAOSHA_HANDLE_LIST+randomName</td>
+<td>手机号</td>
+</tr>
+</tbody></table>
+<h5 id="削锋"><a href="#削锋" class="headerlink" title="削锋"></a>削锋</h5><p>秒杀活动是希望更多的人来参与，也就是抢购之前希望有越来越多的人来看购买商品。</p>
+<p>但是，在抢购时间达到后，用户开始真正下单时，秒杀的服务器后端缺不希望同时有几百万人同时发起抢购请求。</p>
+<p>我们都知道服务器的处理资源是有限的，所以出现峰值的时候，很容易导致服务器宕机，用户无法访问的情况出现。</p>
+<p>削峰从本质上来说就是更多地延缓用户请求，以及层层过滤用户的访问需求，遵从“最后落地到数据库的请求数要尽量少”的原则。 </p>
+<p>要对流量进行削峰，最容易想到的解决方案就是用消息队列来缓冲瞬时流量，把同步的直接调用转换成异步的间接推送，中间通过一个队列在一端承接瞬时的流量洪峰，在另一端平滑地将消息推送出去。 </p>
+<h4 id="消息对列（异步）"><a href="#消息对列（异步）" class="headerlink" title="消息对列（异步）"></a>消息对列（异步）</h4><p>AbstarctMessageHandler 消息监听器 实现 Runnable 接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstarctMessageHandler</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Runnable</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化启动本监听器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@PostConstruct</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startListen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// 启动监听</span></span><br><span class="line">   <span class="keyword">new</span> Thread(<span class="keyword">this</span>).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>run() 方法具体功能是 循环 listen() 方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">while</span> (<span class="keyword">true</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      listen();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>listen() 方法</p>
+<ol>
+<li>阻塞的获取 Redis 中消息对列的值 key 为 MIAOSHA_MESSAGE，如果消息对列中没有值，则一直阻塞</li>
+<li>提交任务到线程池 ThreadPoolTaskExecutor ，核心功能交给子类 MiaoshaRequestHandler 的 handle 方法处理，如果处理失败，则判断失败次数，满足重试资格次数+1，并重新put到消息对列中。</li>
+</ol>
+<p>MiaoshaRequestHandler.handle(message)</p>
+<ol>
+<li>判断用户是否在黑名单中</li>
+<li>判断抢购是否结束</li>
+<li>减 Redis 的库存 decr() 方法</li>
+<li>根据 手机号 和 商品randomName 生成 token ，并将token添加到Redis中。</li>
+</ol>
+<p>注：这里的减库存操作不会影响到DB数据库</p>
+<h3 id="下订单"><a href="#下订单" class="headerlink" title="下订单"></a>下订单</h3><p>在上面的前端中说到 “请求成功后开启定时查询抢购结果的方法” ，该方法是通过Redis查询该手机号和商品randomName的token是否存在，存在则提供下单接口，执行下单功能</p>
+<p>具体流程图</p>
+<p><img src="https://raw.githubusercontent.com/fangxiaojian/Figurebed/master/img/order.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+
+<div>
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-heart"></i> 感谢阅读-------------</div>
+    
+</div>
+</div>
+ 
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt=" WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt=" Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag"><i class="fa fa-tag"></i> 项目</a>
+          
+            <a href="/tags/%E7%A7%92%E6%9D%80/" rel="tag"><i class="fa fa-tag"></i> 秒杀</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/17/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%BA%8C-Netty%E5%AF%B9Executor%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="next" title="Netty源码分析(二)Netty对Executor的实现机制源码分析">
+                <i class="fa fa-chevron-left"></i> Netty源码分析(二)Netty对Executor的实现机制源码分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/26/%E9%A1%B9%E7%9B%AE-kisso%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E8%AF%A6%E8%A7%A3/" rel="prev" title="kisso单点登录">
+                kisso单点登录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/fangxiaojian" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">项目设计要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">项目流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">数据库设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">项目流程详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text">定时任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GoodsRedisStoreInitTask-%E5%95%86%E5%93%81redis%E5%BA%93%E5%AD%98%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.1.</span> <span class="nav-text">GoodsRedisStoreInitTask 商品redis库存初始化任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GoodsTokenExpireClearTask-%E5%95%86%E5%93%81token%E8%BF%87%E6%9C%9F%E6%B8%85%E7%90%86%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.2.</span> <span class="nav-text">GoodsTokenExpireClearTask 商品token过期清理任务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF"><span class="nav-number">5.2.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%92%E6%9D%80"><span class="nav-number">5.3.</span> <span class="nav-text">秒杀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%81%B6%E6%84%8F%E7%94%A8%E6%88%B7%E5%8F%8AIP%E6%8B%A6%E6%88%AA"><span class="nav-number">5.3.1.</span> <span class="nav-text">恶意用户及IP拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UserInterceptor-%E6%81%B6%E6%84%8F%E7%94%A8%E6%88%B7%E6%8B%A6%E6%88%AA"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">UserInterceptor 恶意用户拦截</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPInterceptor-%E6%81%B6%E6%84%8FIP%E6%8B%A6%E6%88%AA"><span class="nav-number">5.3.1.2.</span> <span class="nav-text">IPInterceptor 恶意IP拦截</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MiaoshaInterface-miaosha"><span class="nav-number">5.3.2.</span> <span class="nav-text">MiaoshaInterface.miaosha()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A7%92%E6%9D%80%E6%96%B9%E6%B3%95%E9%83%A8%E5%88%86%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%AF%A6%E8%A7%A3"><span class="nav-number">5.3.2.1.</span> <span class="nav-text">秒杀方法部分流程图详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8A%E9%94%8B"><span class="nav-number">5.3.2.2.</span> <span class="nav-text">削锋</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E5%AF%B9%E5%88%97%EF%BC%88%E5%BC%82%E6%AD%A5%EF%BC%89"><span class="nav-number">5.3.3.</span> <span class="nav-text">消息对列（异步）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%AE%A2%E5%8D%95"><span class="nav-number">5.4.</span> <span class="nav-text">下订单</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小贱</span>
+
+  
+</div>
+
+
+  <!--<div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>-->
+
+
+
+ <!-- <span class="post-meta-divider">|</span>-->
+
+
+
+  <!--<div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>-->
+
+
+
+
+
+<!--
+
+-->
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  <div class="bg_content">
+    <canvas id="canvas"></canvas>
+</div>
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("fFOJlkyoJ5M2PSx3uylpKIfs-gzGzoHsz", "qJjj2M0jat0Ph7vtMRjMHmHP");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+</body>
+</html>

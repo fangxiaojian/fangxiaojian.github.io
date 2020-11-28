@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小贱の博客</title>
+  
+  <subtitle>Our pride chiefly rests on ignorance</subtitle>
+  <link href="https://www.xiaojianblog.top/atom.xml" rel="self"/>
+  
+  <link href="https://www.xiaojianblog.top/"/>
+  <updated>2019-08-25T11:49:17.000Z</updated>
+  <id>https://www.xiaojianblog.top/</id>
+  
+  <author>
+    <name>小贱</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java高级-1JVM</title>
+    <link href="https://www.xiaojianblog.top/2019/08/02/Java%E9%AB%98%E7%BA%A7-1JVM/"/>
+    <id>https://www.xiaojianblog.top/2019/08/02/Java%E9%AB%98%E7%BA%A7-1JVM/</id>
+    <published>2019-08-02T00:31:52.000Z</published>
+    <updated>2019-08-25T11:49:17.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;运行时数据区域&quot;&gt;&lt;a href=&quot;#运行时数据区域&quot; class=&quot;headerlink&quot; title=&quot;运行时数据区域&quot;&gt;&lt;/a&gt;运行时数据区域&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="java高级" scheme="https://www.xiaojianblog.top/categories/java%E9%AB%98%E7%BA%A7/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+    <category term="JVM" scheme="https://www.xiaojianblog.top/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-12Atomic原子类</title>
+    <link href="https://www.xiaojianblog.top/2019/08/01/Java%E5%9F%BA%E7%A1%80-12Atomic%E5%8E%9F%E5%AD%90%E7%B1%BB/"/>
+    <id>https://www.xiaojianblog.top/2019/08/01/Java%E5%9F%BA%E7%A1%80-12Atomic%E5%8E%9F%E5%AD%90%E7%B1%BB/</id>
+    <published>2019-08-01T14:31:52.000Z</published>
+    <updated>2019-08-25T11:49:17.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;​        Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是构成一般物质的最小单位，在化学反应中是不可分割的。在我们这里 Atomic 是指一个操作是不可中断的。即使是在多个线程一起执行的时候，一个操作一旦开始，就不会被其他线程干扰。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-11并发容器</title>
+    <link href="https://www.xiaojianblog.top/2019/08/01/Java%E5%9F%BA%E7%A1%80-11%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/"/>
+    <id>https://www.xiaojianblog.top/2019/08/01/Java%E5%9F%BA%E7%A1%80-11%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/</id>
+    <published>2019-08-01T12:31:52.000Z</published>
+    <updated>2019-08-25T11:49:17.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;JDK-提供的并发容器总结&quot;&gt;&lt;a href=&quot;#JDK-提供的并发容器总结&quot; class=&quot;headerlink&quot; title=&quot;JDK 提供的并发容器总结&quot;&gt;&lt;/a&gt;JDK 提供的并发容器总结&lt;/h2&gt;&lt;p&gt;JDK提供的这些容器大部分在 &lt;code&gt;java.util.concurrent&lt;/code&gt; 包中。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-10锁</title>
+    <link href="https://www.xiaojianblog.top/2019/08/01/Java%E5%9F%BA%E7%A1%80-10%E9%94%81/"/>
+    <id>https://www.xiaojianblog.top/2019/08/01/Java%E5%9F%BA%E7%A1%80-10%E9%94%81/</id>
+    <published>2019-08-01T02:31:52.000Z</published>
+    <updated>2019-08-14T08:35:15.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;线程安全&quot;&gt;&lt;a href=&quot;#线程安全&quot; class=&quot;headerlink&quot; title=&quot;线程安全&quot;&gt;&lt;/a&gt;线程安全&lt;/h2&gt;&lt;p&gt;多个线程不管以何种方式访问某个类，并且在主调代码中不需要进行同步，都能表现正确的行为。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-9并发</title>
+    <link href="https://www.xiaojianblog.top/2019/07/30/Java%E5%9F%BA%E7%A1%80-9%E5%B9%B6%E5%8F%91/"/>
+    <id>https://www.xiaojianblog.top/2019/07/30/Java%E5%9F%BA%E7%A1%80-9%E5%B9%B6%E5%8F%91/</id>
+    <published>2019-07-30T02:31:52.000Z</published>
+    <updated>2019-08-15T03:07:33.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;进程与线程&quot;&gt;&lt;a href=&quot;#进程与线程&quot; class=&quot;headerlink&quot; title=&quot;进程与线程&quot;&gt;&lt;/a&gt;进程与线程&lt;/h2&gt;&lt;h3 id=&quot;进程&quot;&gt;&lt;a href=&quot;#进程&quot; class=&quot;headerlink&quot; title=&quot;进程&quot;&gt;&lt;/a&gt;进程&lt;/h3&gt;&lt;p&gt;​        进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-8集合</title>
+    <link href="https://www.xiaojianblog.top/2019/07/29/Java%E5%9F%BA%E7%A1%80-8%E9%9B%86%E5%90%88/"/>
+    <id>https://www.xiaojianblog.top/2019/07/29/Java%E5%9F%BA%E7%A1%80-8%E9%9B%86%E5%90%88/</id>
+    <published>2019-07-29T02:31:52.000Z</published>
+    <updated>2019-08-10T02:08:54.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        容器主要包括  &lt;code&gt;Collection&lt;/code&gt; 和 &lt;code&gt;Map&lt;/code&gt; 两种，&lt;code&gt;Collection&lt;/code&gt; 存储着对象的集合，而 &lt;code&gt;Map&lt;/code&gt; 存储着键值对（两个对象）的映射表。 &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-7泛型</title>
+    <link href="https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-7%E6%B3%9B%E5%9E%8B/"/>
+    <id>https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-7%E6%B3%9B%E5%9E%8B/</id>
+    <published>2019-07-28T12:31:52.000Z</published>
+    <updated>2019-08-08T10:47:02.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Java中的泛型是什么-使用泛型的好处是什么&quot;&gt;&lt;a href=&quot;#Java中的泛型是什么-使用泛型的好处是什么&quot; class=&quot;headerlink&quot; title=&quot;Java中的泛型是什么 ? 使用泛型的好处是什么?&quot;&gt;&lt;/a&gt;Java中的泛型是什么 ? 使用泛型的好处是什么?&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AbstractQueuedSynchronizer源码剖析(二)不响应中断的独占锁</title>
+    <link href="https://www.xiaojianblog.top/2019/07/28/AbstractQueuedSynchronizer%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90-%E4%BA%8C-%E4%B8%8D%E5%93%8D%E5%BA%94%E4%B8%AD%E6%96%AD%E7%9A%84%E7%8B%AC%E5%8D%A0%E9%94%81/"/>
+    <id>https://www.xiaojianblog.top/2019/07/28/AbstractQueuedSynchronizer%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90-%E4%BA%8C-%E4%B8%8D%E5%93%8D%E5%BA%94%E4%B8%AD%E6%96%AD%E7%9A%84%E7%8B%AC%E5%8D%A0%E9%94%81/</id>
+    <published>2019-07-28T08:33:11.000Z</published>
+    <updated>2019-08-27T15:58:36.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;AbstactQueuedSynchronizer的基本数据结构&quot;&gt;&lt;a href=&quot;#AbstactQueuedSynchronizer的基本数据结构&quot; class=&quot;headerlink&quot; title=&quot;AbstactQueuedSynchronizer的基本数据结构&quot;&gt;&lt;/a&gt;AbstactQueuedSynchronizer的基本数据结构&lt;/h2&gt;&lt;p&gt;AQS的基本数据结构为 &lt;code&gt;Node&lt;/code&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AQS" scheme="https://www.xiaojianblog.top/categories/AQS/"/>
+    
+    
+    <category term="AQS源码" scheme="https://www.xiaojianblog.top/tags/AQS%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-6反射</title>
+    <link href="https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-6%E5%8F%8D%E5%B0%84/"/>
+    <id>https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-6%E5%8F%8D%E5%B0%84/</id>
+    <published>2019-07-28T07:31:52.000Z</published>
+    <updated>2019-08-08T10:46:40.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;什么是Java类中的反射？&quot;&gt;&lt;a href=&quot;#什么是Java类中的反射？&quot; class=&quot;headerlink&quot; title=&quot;什么是Java类中的反射？&quot;&gt;&lt;/a&gt;什么是Java类中的反射？&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-5关键字</title>
+    <link href="https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-5%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-5%E5%85%B3%E9%94%AE%E5%AD%97/</id>
+    <published>2019-07-28T05:31:52.000Z</published>
+    <updated>2019-08-08T10:46:26.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;final&quot;&gt;&lt;a href=&quot;#final&quot; class=&quot;headerlink&quot; title=&quot;final&quot;&gt;&lt;/a&gt;final&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1. 数据&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;声明数据为常量，可以是编译时常量，也可以是在运行时被初始化后不能被改变的常量。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-4Object的通用方法</title>
+    <link href="https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-4Object%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>https://www.xiaojianblog.top/2019/07/28/Java%E5%9F%BA%E7%A1%80-4Object%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <published>2019-07-28T02:31:52.000Z</published>
+    <updated>2019-08-08T10:46:11.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-3String</title>
+    <link href="https://www.xiaojianblog.top/2019/07/27/Java%E5%9F%BA%E7%A1%80-3String/"/>
+    <id>https://www.xiaojianblog.top/2019/07/27/Java%E5%9F%BA%E7%A1%80-3String/</id>
+    <published>2019-07-27T09:31:52.000Z</published>
+    <updated>2019-08-25T16:11:59.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;String、-StringBuffer、-StringBuilder-的区别&quot;&gt;&lt;a href=&quot;#String、-StringBuffer、-StringBuilder-的区别&quot; class=&quot;headerlink&quot; title=&quot;String、 StringBuffer、 StringBuilder 的区别&quot;&gt;&lt;/a&gt;String、 StringBuffer、 StringBuilder 的区别&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-2面向对象</title>
+    <link href="https://www.xiaojianblog.top/2019/07/27/Java%E5%9F%BA%E7%A1%80-2%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://www.xiaojianblog.top/2019/07/27/Java%E5%9F%BA%E7%A1%80-2%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
+    <published>2019-07-27T09:30:52.000Z</published>
+    <updated>2019-08-25T16:12:03.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;面向对象的特征&quot;&gt;&lt;a href=&quot;#面向对象的特征&quot; class=&quot;headerlink&quot; title=&quot;面向对象的特征&quot;&gt;&lt;/a&gt;面向对象的特征&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;封装&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;继承&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;多态&lt;/p&gt;
+&lt;p&gt;java的四个基本特性：抽象、继承、封装、多态&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础-1数据类型</title>
+    <link href="https://www.xiaojianblog.top/2019/07/27/Java%E5%9F%BA%E7%A1%80-1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://www.xiaojianblog.top/2019/07/27/Java%E5%9F%BA%E7%A1%80-1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <published>2019-07-27T09:28:52.000Z</published>
+    <updated>2019-08-08T10:45:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;p&gt;八大基本数据类型：boolean、byte、char、short、int、long、float、double&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java基础" scheme="https://www.xiaojianblog.top/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://www.xiaojianblog.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AbstractQueuedSynchronizer源码剖析(一)从抽象和接口说起</title>
+    <link href="https://www.xiaojianblog.top/2019/07/27/AbstractQueuedSynchronizer%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90-%E4%B8%80-%E4%BB%8E%E6%8A%BD%E8%B1%A1%E5%92%8C%E6%8E%A5%E5%8F%A3%E8%AF%B4%E8%B5%B7/"/>
+    <id>https://www.xiaojianblog.top/2019/07/27/AbstractQueuedSynchronizer%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90-%E4%B8%80-%E4%BB%8E%E6%8A%BD%E8%B1%A1%E5%92%8C%E6%8E%A5%E5%8F%A3%E8%AF%B4%E8%B5%B7/</id>
+    <published>2019-07-27T08:33:11.000Z</published>
+    <updated>2019-08-14T08:35:15.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;从设计思想开始&quot;&gt;&lt;a href=&quot;#从设计思想开始&quot; class=&quot;headerlink&quot; title=&quot;从设计思想开始&quot;&gt;&lt;/a&gt;从设计思想开始&lt;/h2&gt;&lt;p&gt;​        &lt;code&gt;DK1.5&lt;/code&gt; 之后引入了并发 &lt;code&gt;java.util.concurrent&lt;/code&gt;，大大提高了Java程序的并发性能。在介绍 &lt;code&gt;Lock&lt;/code&gt; 之前，我们需要先熟悉一个非常重要的组件，掌握了该组件JUC包下面很多问题都不在是问题了。&lt;code&gt;AQS&lt;/code&gt; 是构建锁或者其他同步组件的基础框架，JUC并发包的作者期望它能够成为实现大部分同步需求的基础。它是JUC并发包中的核心基础组件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AQS" scheme="https://www.xiaojianblog.top/categories/AQS/"/>
+    
+    
+    <category term="AQS源码" scheme="https://www.xiaojianblog.top/tags/AQS%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty源码分析(三)Netty服务端ServerBootstrap的初始化与反射在其中的应用分析</title>
+    <link href="https://www.xiaojianblog.top/2019/07/26/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%89-Netty%E6%9C%8D%E5%8A%A1%E7%AB%AFServerBootstrap%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%B0%84%E5%9C%A8%E5%85%B6%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%88%86%E6%9E%90/"/>
+    <id>https://www.xiaojianblog.top/2019/07/26/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%89-Netty%E6%9C%8D%E5%8A%A1%E7%AB%AFServerBootstrap%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%B0%84%E5%9C%A8%E5%85%B6%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%88%86%E6%9E%90/</id>
+    <published>2019-07-26T09:28:52.000Z</published>
+    <updated>2019-08-01T08:59:38.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​    上一节说到 EventLoopGroup 只是对 bossGroup 和 workerGroup 的一些初始化，包括线程数量，执行器（命令模式），我们的服务端接下来使用 ServerBootstrap 对 bossGroup 和 workerGroup 进行了包装，整个过程是一个方法链的调用过程，每个方法返回调用者本身。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Netty" scheme="https://www.xiaojianblog.top/categories/Netty/"/>
+    
+    
+    <category term="Netty" scheme="https://www.xiaojianblog.top/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kisso单点登录</title>
+    <link href="https://www.xiaojianblog.top/2019/07/26/%E9%A1%B9%E7%9B%AE-kisso%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.xiaojianblog.top/2019/07/26/%E9%A1%B9%E7%9B%AE-kisso%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E8%AF%A6%E8%A7%A3/</id>
+    <published>2019-07-26T02:31:52.000Z</published>
+    <updated>2019-08-08T10:42:59.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;​        kisso 采用的是加密会话 cookie 机制实现单点登录 SSO 服务，具备“无状态”、“分散验证” 等特性。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="项目" scheme="https://www.xiaojianblog.top/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="项目" scheme="https://www.xiaojianblog.top/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+    <category term="kisso" scheme="https://www.xiaojianblog.top/tags/kisso/"/>
+    
+    <category term="单点登录" scheme="https://www.xiaojianblog.top/tags/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>秒杀、抢购项目详解</title>
+    <link href="https://www.xiaojianblog.top/2019/07/25/%E9%A1%B9%E7%9B%AE-%E7%A7%92%E6%9D%80%E3%80%81%E6%8A%A2%E8%B4%AD%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://www.xiaojianblog.top/2019/07/25/%E9%A1%B9%E7%9B%AE-%E7%A7%92%E6%9D%80%E3%80%81%E6%8A%A2%E8%B4%AD%E8%AF%A6%E8%A7%A3/</id>
+    <published>2019-07-25T02:31:52.000Z</published>
+    <updated>2019-08-08T14:22:16.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        所谓“秒杀”，就是网络卖家发布一些超低价格的商品，所有买家在同一时间网上抢购的一种销售方式。通俗一点讲就是网络商家为促销等目的组织的网上限时抢购活动。由于商品价格低廉，往往一上架就被抢购一空，有时只用一秒钟。 &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="项目" scheme="https://www.xiaojianblog.top/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="项目" scheme="https://www.xiaojianblog.top/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+    <category term="秒杀" scheme="https://www.xiaojianblog.top/tags/%E7%A7%92%E6%9D%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty源码分析(二)Netty对Executor的实现机制源码分析</title>
+    <link href="https://www.xiaojianblog.top/2019/07/17/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%BA%8C-Netty%E5%AF%B9Executor%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>https://www.xiaojianblog.top/2019/07/17/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%BA%8C-Netty%E5%AF%B9Executor%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</id>
+    <published>2019-07-17T08:33:11.000Z</published>
+    <updated>2019-08-01T01:57:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​    上一次我们说到 NioEventLoopGroup 的初始化，其中父类 MultithreadEventExecutorGroup 的构造器中包含 Executor 的创建，这次我们来看看 Executor 的实现机制。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Netty" scheme="https://www.xiaojianblog.top/categories/Netty/"/>
+    
+    
+    <category term="Netty" scheme="https://www.xiaojianblog.top/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty源码分析(一)NioEventLoopGroup</title>
+    <link href="https://www.xiaojianblog.top/2019/07/09/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80-NioEventLoopGroup/"/>
+    <id>https://www.xiaojianblog.top/2019/07/09/Netty%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80-NioEventLoopGroup/</id>
+    <published>2019-07-09T08:36:18.000Z</published>
+    <updated>2019-08-01T00:53:24.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​    Netty内部都是通过线程在处理各种数据，EventLoopGroup就是用来管理调度他们的，注册Channel，管理他们的生命周期 。&lt;/p&gt;
+&lt;p&gt;​    NioEventLoopGroup 字面含义就是”非阻塞的事件循环组”，其实就是一个死循环。NioEventLoopGroup 里面有一堆的 NioEventLoop，而 NioEventLoopGroup 的作用就是完成变量的赋值。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Netty" scheme="https://www.xiaojianblog.top/categories/Netty/"/>
+    
+    
+    <category term="Netty" scheme="https://www.xiaojianblog.top/tags/Netty/"/>
+    
+    <category term="Nio" scheme="https://www.xiaojianblog.top/tags/Nio/"/>
+    
+  </entry>
+  
+</feed>
